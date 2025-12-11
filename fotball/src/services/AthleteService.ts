@@ -50,6 +50,15 @@ const addNewAthlete = async (
   }
 };
 
+const getAthleteByID = async (id: number): Promise<IAthlete | null> => {
+  try {
+    const idresults = await axios.get(`${baseUrl}${athletesEndpoint}/${id}`);
+    return idresults.data;
+  } catch {
+    return null;
+  }
+};
+
 interface IVenueResponsList {
   success: boolean;
   data: IVenue[] | null;
@@ -93,5 +102,6 @@ export default {
   getAllAthletes,
   getAllVenues,
   getAllFinances,
+  getAthleteByID,
   addNewAthlete,
 };

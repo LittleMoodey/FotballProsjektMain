@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
+<<<<<<< Updated upstream
 * {
   box-sizing: border-box;
 }
 
+=======
+/*
+>>>>>>> Stashed changes
 body {
   margin: 0 auto;
   min-width: 320px;
@@ -136,4 +140,9 @@ body {
 
 .xs-12 {
   grid-column: auto / span 12;
+<<<<<<< Updated upstream
 } */
+=======
+}
+  */
+>>>>>>> Stashed changes

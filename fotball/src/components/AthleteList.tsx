@@ -24,6 +24,7 @@ const AthleteList = () => {
   };
 
   return (
+<<<<<<< Updated upstream
     <>
       <h1 className="text-5xl text-center py-8 mb-8 text-green-950 bg-lime-50">
         Football Athletes
@@ -36,6 +37,16 @@ const AthleteList = () => {
         </div>
       </div>
     </>
+=======
+    <section className="max-w-6xl mx-auto px-4 py-8 grid gap-4">
+      <h3>Fotball athletes</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {athletes.map((athlete) => (
+          <AthleteItem key={athlete.id} player={athlete} />
+        ))}
+      </div>
+    </section>
+>>>>>>> Stashed changes
   );
 };
 export default AthleteList;

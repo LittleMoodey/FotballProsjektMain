@@ -17,6 +17,18 @@ public class AthletesController(FotballContext _fotballContext) : ControllerBase
         return athletes;
     }
 
+    [HttpGet("{id}")] //GET: 1 Athlete. 
+    public async Task<ActionResult<Athlete>> GetAthlete(int id)
+    {
+        var athlete = await _fotballContext.Athletes.FindAsync(id);
+
+        if (athlete == null)
+        {
+            return NotFound();
+        }
+
+        return athlete; 
+    }
 
     // DELETE: api/athletes/id
     [HttpDelete("{id}")]
@@ -35,7 +47,7 @@ public class AthletesController(FotballContext _fotballContext) : ControllerBase
         return _fotballContext.Athletes.Any(a => a.Id == id);
     }
 
-    
+
 
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, Athlete athlete)
